@@ -1,10 +1,21 @@
 <?php
+
+function view(){
+    // appel du modele 
+    require __DIR__.'/../Entity/Annonce.php'; 
+    $entry = Annonce::all();
+
+  
+
+    include __DIR__.'/../../templates/ads_View.php';
+
+}
 function add(){
     include __DIR__.'/../../templates/Add_ads_View.php';
 }
 
 function save(){
-    var_dump($_FILES);
+  //  var_dump($_FILES);
     if(isset($_FILES['img'])){
         $tmpName = $_FILES['img']['tmp_name'];
         $name = $_FILES['img']['name'];

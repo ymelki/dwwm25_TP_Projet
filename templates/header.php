@@ -22,7 +22,7 @@
             <a class="nav-link active" aria-current="page" href="/">Home</a>
             </li>
             <li class="nav-item">
-            <a class="nav-link" href="#">ads</a>
+            <a class="nav-link" href="/view_ads">Ads</a>
             </li>
             <li class="nav-item">
             <a class="nav-link" href="/add_ads">Add ads</a>

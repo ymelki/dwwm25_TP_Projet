@@ -18,4 +18,7 @@ if ($path=='/save_ad'){
     include __DIR__.'/../src/Controller/AdsController.php';
     save(); //Renvoyer la vue du formulaire de connexion
 }
- 
+if ($path=='/view_ads'){
+    include __DIR__.'/../src/Controller/AdsController.php';
+    view(); //Renvoyer la vue du formulaire de connexion
+}
