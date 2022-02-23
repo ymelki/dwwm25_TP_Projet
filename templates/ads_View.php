@@ -9,11 +9,11 @@
             if ($monannonce->image=="") {  $monannonce->image="e-learning-18-534347.png"; } ?>
     
 
- 
+            
            <div class="card col-sm" style="width: 18rem;">
                 <img src="http://localhost:8000/img/<?=$monannonce->image ?>" class="card-img-top" alt="...">
                 <div class="card-body">
-                    <p class="card-text">Annonce : <?=$monannonce->titre ?></p>
+                <a href="/adone?id=<?=$monannonce->id ?>"><p class="card-text">Annonce : <?=$monannonce->titre ?></a></p>
                     <p class="card-text">Annonce : <?=$monannonce->message ?></p>
                 </div>
             </div>

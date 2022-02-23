@@ -1,5 +1,12 @@
 <?php
+function viewone(){
+    // appel du modele 
+    require __DIR__.'/../Entity/Annonce.php'; 
+    $entry = Annonce::retrieveByPK($_GET['id']);
+ 
+    include __DIR__.'/../../templates/viewone.php';
 
+}
 function view(){
     // appel du modele 
     require __DIR__.'/../Entity/Annonce.php'; 

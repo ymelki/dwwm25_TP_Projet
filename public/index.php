@@ -22,3 +22,7 @@ if ($path=='/view_ads'){
     include __DIR__.'/../src/Controller/AdsController.php';
     view(); //Renvoyer la vue du formulaire de connexion
 }
+if ($path=='/adone'){
+    include __DIR__.'/../src/Controller/AdsController.php';
+    viewone(); //Renvoyer la vue du formulaire de connexion
+}
