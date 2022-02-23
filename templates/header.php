@@ -28,7 +28,10 @@
             <a class="nav-link" href="/add_ads">Add ads</a>
             </li>
             <li class="nav-item">
-            <a class="nav-link disabled">Disabled</a>
+            <a class="nav-link " href="/my_favorite">Mes favoris</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link " href="/vider_fav">Vider les favoris</a>
             </li>
         </ul>
         </div>

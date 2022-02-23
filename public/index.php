@@ -26,3 +26,20 @@ if ($path=='/adone'){
     include __DIR__.'/../src/Controller/AdsController.php';
     viewone(); //Renvoyer la vue du formulaire de connexion
 }
+if ($path=='/ads_fav'){
+    include __DIR__.'/../src/Controller/AdsController.php';
+    add_fav(); //Renvoyer la vue du formulaire de connexion
+}
+if ($path=='/vider_fav'){
+    include __DIR__.'/../src/Controller/AdsController.php';
+    vider_fav(); //Renvoyer la vue du formulaire de connexion
+}
+if ($path=='/my_favorite'){
+    include __DIR__.'/../src/Controller/AdsController.php';
+    my_favorite(); //Renvoyer la vue du formulaire de connexion
+}
+if ($path=='/remove_fav'){
+    include __DIR__.'/../src/Controller/AdsController.php';
+    remove_favorite(); //Renvoyer la vue du formulaire de connexion
+}
+

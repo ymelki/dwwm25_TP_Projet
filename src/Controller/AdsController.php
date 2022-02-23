@@ -1,9 +1,77 @@
 <?php
+function remove_favorite(){
+    $entry = json_decode($_COOKIE['favoris']);
+
+var_dump($entry);
+echo "<br />";echo "<br />";echo "<br />";
+
+
+    foreach( $entry as $key=>$favoris){
+        if ($favoris->id == $_GET['id'] ){
+             var_dump($favoris);
+             echo "test".$key ; 
+             unset($entry[$key]);
+        }
+    }
+
+
+    echo "<br />";echo "<br />";echo "<br />";
+    var_dump($entry);
+}
+function my_favorite(){
+        // appel du modele 
+        require __DIR__.'/../Entity/Annonce.php'; 
+        $entry = json_decode($_COOKIE['favoris']);
+
+        include __DIR__.'/../../templates/ads_View.php';
+}
+function vider_fav(){
+    setcookie('favoris',null);
+}
+function add_fav(){
+    // appel du modele 
+    require __DIR__.'/../Entity/Annonce.php'; 
+
+    // Recuperer l'annonce depuis l'ID de l'URL
+    $entry = Annonce::retrieveByPK($_GET['id']);
+ 
+
+    // creez un tab en php
+    require __DIR__.'/../Entity/Mesfav.php';
+    $mesfavoris= new Mesfav();
+   
+
+    if ((!isset($_COOKIE['favoris'])))  {
+         $mesfavoris->mesfav=[];
+    }
+
+    if (isset($_COOKIE['favoris']))  {
+        $mesfavoris->mesfav=json_decode($_COOKIE['favoris']);
+
+        // verifier si l'ID est deja present 
+
+        foreach( $mesfavoris->mesfav as $favoris){
+            if ($favoris->id == $_GET['id'] ){
+                echo "je n'ajoute pas ce favoris car il est deja present dans mon tableau de favoris !";
+                return;
+            }
+        }
+    }
+ 
+     
+    array_push($mesfavoris->mesfav, $entry);    
+    setcookie('favoris',json_encode($mesfavoris->mesfav));
+ 
+ //   include __DIR__.'/../../templates/viewone.php';
+
+}
 function viewone(){
     // appel du modele 
     require __DIR__.'/../Entity/Annonce.php'; 
+
+    // Recuperer l'annonce depuis l'ID de l'URL
     $entry = Annonce::retrieveByPK($_GET['id']);
- 
+
     include __DIR__.'/../../templates/viewone.php';
 
 }

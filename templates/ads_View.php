@@ -15,6 +15,9 @@
                 <div class="card-body">
                 <a href="/adone?id=<?=$monannonce->id ?>"><p class="card-text">Annonce : <?=$monannonce->titre ?></a></p>
                     <p class="card-text">Annonce : <?=$monannonce->message ?></p>
+                    <p class="card-text"><a href="ads_fav?id=<?=$monannonce->id ?>">Ajouter au favoris</a></p>
+                    <p class="card-text"><a href="remove_fav?id=<?=$monannonce->id ?>">Supprimer des favoris</a></p>
+
                 </div>
             </div>
       
