@@ -9,8 +9,9 @@ echo "<br />";echo "<br />";echo "<br />";
     foreach( $entry as $key=>$favoris){
         if ($favoris->id == $_GET['id'] ){
              var_dump($favoris);
-             echo "test".$key ; 
+             
              unset($entry[$key]);
+             setcookie("favoris",json_encode($entry));
         }
     }
 
